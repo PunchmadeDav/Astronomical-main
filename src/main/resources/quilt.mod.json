@@ -1,0 +1,58 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "doctor4t",
+		"id": "astronomical",
+		"version": "${version}",
+		"metadata": {
+			"name": "Astronomical",
+			"description": "Stargazing, stars, planets and marshmallows in the palm of your hand.",
+			"contributors": {
+				"doctor4t": "Main Author",
+				"Arathain": "Programmer",
+				"AmyMialee": "Programmer",
+				"Luxintrus": "Texture Artist",
+				"Diansu": "Texture Artist",
+				"Merp": "Audio Artist"
+			},
+			"icon": "assets/astronomical/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "doctor4t.astronomical.common.Astronomical",
+			"client_init": "doctor4t.astronomical.client.AstronomicalClient",
+			"cardinal-components-entity": "doctor4t.astronomical.cca.AstraCardinalComponents",
+			"cardinal-components-world": "doctor4t.astronomical.cca.AstraCardinalComponents"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.17.0-"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=4.0.0-"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.19.2"
+			},
+			{
+				"id": "lodestonedav",
+				"versions": "*"
+			}
+		]
+	},
+	"mixin": "astronomical.mixins.json",
+	"access_widener": "astronomical.accesswidener",
+	"cardinal-components": [
+		"astronomical:sky",
+		"astronomical:starfall",
+		"astronomical:holding"
+	],
+	"quilt_loom": {
+		"injected_interfaces": {
+			"net/minecraft/class_1657": ["doctor4t/astronomical/common/util/PlayerAttackHeld"]
+		}
+	}
+}
